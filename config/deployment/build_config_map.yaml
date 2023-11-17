@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mini-app-build-config-map
+  labels:
+    app-owner: mini-app
+data:
+  bundle-rebuild: x
+  #ENV['BUNDLE_WITHOUT']
+  #bundle-without: 'test:development'

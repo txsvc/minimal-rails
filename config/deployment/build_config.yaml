@@ -1,0 +1,79 @@
+apiVersion: v1
+kind: List
+items:
+  - kind: BuildConfig
+    apiVersion: build.openshift.io/v1
+    metadata:
+      name: mini-app
+      labels:
+        app: mini-app
+        app.kubernetes.io/component: mini-app
+        app.kubernetes.io/instance: mini-app
+        app.kubernetes.io/name: mini-app
+        app.kubernetes.io/part-of: mini-app
+        app.openshift.io/runtime: ruby
+        app.openshift.io/runtime-version: 3.0-ubi7
+    spec:
+      source:
+        type: Git
+        git:
+          uri: 'https://github.com/txsvc/mini-app.git'
+        contextDir: /
+      
+      strategy:
+        type: Source
+        sourceStrategy:
+          from:
+            kind: ImageStreamTag
+            namespace: openshift
+            name: 'ruby:3.0-ubi7'
+          env:
+            - name: BUNDLE_REBUILD
+              valueFrom:
+                configMapKeyRef:
+                  name: mini-app-build-config-map
+                  key: bundle-rebuild
+            - name: RAILS_MASTER_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: mini-app-secrets
+                  key: rails-master-key
+      
+      output:
+        to:
+          kind: ImageStreamTag
+          name: 'mini-app:latest'
+      
+      triggers:
+        - type: Generic
+          generic:
+            secretReference:
+              name: mini-app-webhook-secrets
+        - type: GitHub
+          github:
+            secretReference:
+              name: mini-app-webhook-secrets
+        - type: ImageChange
+          imageChange: {}
+        - type: ConfigChange
+      
+      resources: {}
+      successfulBuildsHistoryLimit: 5
+      failedBuildsHistoryLimit: 5
+      postCommit: {}
+      runPolicy: Serial
+
+  - kind: ImageStream
+    apiVersion: image.openshift.io/v1
+    metadata:
+      name: mini-app
+      labels:
+        app: mini-app
+        app.kubernetes.io/component: mini-app
+        app.kubernetes.io/instance: mini-app
+        app.kubernetes.io/name: mini-app
+        app.openshift.io/runtime: ruby
+        app.openshift.io/runtime-version: 3.0-ubi7
+    spec:
+      lookupPolicy:
+        local: false

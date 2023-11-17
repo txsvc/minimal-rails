@@ -1,0 +1,7 @@
+<% content_for :page_title, formatted_title('Sessions') %>
+
+<div id="root">Sessions - Login with ...</div>
+
+<%= button_to 'Sign in with Github', '/auth/github', data: { turbo: false } %>
+<%= button_to 'Sign in with Google', '/auth/google_oauth2', data: { turbo: false } %>
+<%= button_to 'Sign in with Discord', '/auth/discord', data: { turbo: false } %>

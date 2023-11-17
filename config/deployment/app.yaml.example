@@ -1,0 +1,15 @@
+service: default
+runtime: ruby30
+
+instance_class: F1
+entrypoint: bundle exec rails s -p $PORT
+
+env_variables:
+  # Required for Google Cloud APIs
+  PROJECT_ID: 'xyz'
+  LOCATION_ID: 'europe-west3'
+  SERVICE_NAME: 'default'
+  # RAILS
+  RAILS_ENV: "production"
+  RAILS_MASTER_KEY: "5..."
+  RAILS_SERVE_STATIC_FILES: true

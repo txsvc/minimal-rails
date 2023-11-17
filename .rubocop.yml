@@ -1,0 +1,20 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  Exclude:
+    - bin/**/*
+    - db/schema.rb
+    - db/migrate/*.rb
+    - test/**/*
+    - node_modules/**/*
+    - tmp/**/*
+    - vendor/**/*
+  DisplayStyleGuide: true
+  ExtraDetails: true
+  NewCops: enable # opt-in to new cops by default
+  TargetRubyVersion: 3.0

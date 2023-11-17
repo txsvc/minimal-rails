@@ -1,0 +1,14 @@
+<div>
+  <div>
+    <%= link_to image_tag('logo.png'), root_path, class: '' %>
+    <%= link_to 'About', page_path('about'), class: '' %>
+    <%= link_to 'Impressum / Imprint', page_path('imprint'), class: '' %>
+    <%= link_to 'Data Privacy', page_path('privacy'), class: '' %>
+    <div>
+      <% if signed_in? %>
+        <%= link_to 'Logout', logout_path, class: '' %>
+      <% end %>
+      <%= session.id %> [<%= current_user_id %>/<%= current_user_email %> on <%= oauth_provider %>]
+    </div>
+  </div>
+</div>
