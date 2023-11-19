@@ -5,10 +5,11 @@
     <%= link_to 'Impressum / Imprint', page_path('imprint'), class: '' %>
     <%= link_to 'Data Privacy', page_path('privacy'), class: '' %>
     <div>
+      <%= session.id %> 
       <% if signed_in? %>
         <%= link_to 'Logout', logout_path, class: '' %>
+        [<%= current_user_id %>/<%= current_user_email %> on <%= oauth_provider %>]
       <% end %>
-      <%= session.id %> [<%= current_user_id %>/<%= current_user_email %> on <%= oauth_provider %>]
     </div>
   </div>
 </div>
