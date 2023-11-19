@@ -43,3 +43,5 @@ group :development do
   # Code style checking for RSpec files
   gem 'rubocop-rspec', require: false
 end
+
+gem "tailwindcss-rails", "~> 2.0"

@@ -27,3 +27,6 @@ stuff.md
 secrets.yaml
 *_secrets.yaml
 app.yaml
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
