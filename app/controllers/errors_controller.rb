@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-# typed: false
-
+# Gracefully handle errors
 class ErrorsController < ApplicationController
   protect_from_forgery with: :null_session
   include Error::ErrorHandler

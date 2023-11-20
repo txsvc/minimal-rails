@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module Error
+  # Handle application errors in a central place
   module ErrorHandler
     def self.included(clazz)
       clazz.class_eval do
@@ -23,7 +24,7 @@ module Error
         redirect_to '/'
       else
         et = "+++ #{err}, #{status}, #{message} +++"
-        render plain: et, status: status, content_type: 'text/plain'
+        render plain: et, status:, content_type: 'text/plain'
       end
     end
   end

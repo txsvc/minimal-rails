@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# SessionsController handles sign-in & sign-out etc.
 class SessionsController < ApplicationController
   def index; end
 

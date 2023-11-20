@@ -6,12 +6,12 @@
         <div><%= link_to 'Data Privacy', page_path('privacy'), class: '' %></div>
     </div>
     
-    <div class='container px-1 py-1 mx-auto flex items-center sm:flex-row flex-col'>
-        <a class='flex title-font font-medium items-center md:justify-start justify-center text-gray-900'>
-            <%= link_to image_tag('logo.png'), root_path, class: '' %>
+    <div class='container px-1 py-1 mx-auto flex items-center sm:flex-row flex-col'>        
+        <%= link_to root_path, class: 'flex title-font font-medium items-center md:justify-start justify-center text-gray-900' do %>
+            <%= image_tag('logo1x1.png') %>
             <span class='ml-3 text-xl'>COMPANY</span>
-        </a>
-        
+        <% end %>
+
         <p class='text-sm text-gray-500 ml-2 pl-2 md:border-l md:border-gray-400'>
             © 2023 COMPANY —
             <a href="https://mastodon.social/" class='text-gray-600 ml-1' rel='noopener noreferrer' target='_blank'>@company</a>
