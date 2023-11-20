@@ -1,4 +1,4 @@
-<footer class="mx-auto max-w-7xl px-2 text-gray-600 body-font">
+<footer class='mx-auto max-w-7xl px-2 text-gray-600 body-font'>
     
     <div class='flex flex-row py-2 space-x-4'>
         <div><%= link_to 'About', page_path('about'), class: '' %></div>
@@ -6,20 +6,23 @@
         <div><%= link_to 'Data Privacy', page_path('privacy'), class: '' %></div>
     </div>
     
-    <div class="container px-1 py-1 mx-auto flex items-center sm:flex-row flex-col">
-        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+    <div class='container px-1 py-1 mx-auto flex items-center sm:flex-row flex-col'>
+        <a class='flex title-font font-medium items-center md:justify-start justify-center text-gray-900'>
             <%= link_to image_tag('logo.png'), root_path, class: '' %>
-            <span class="ml-3 text-xl">COMPANY</span>
+            <span class='ml-3 text-xl'>COMPANY</span>
         </a>
         
-        <p class="text-sm text-gray-500 ml-2 pl-2 md:border-l md:border-gray-400">
+        <p class='text-sm text-gray-500 ml-2 pl-2 md:border-l md:border-gray-400'>
             © 2023 COMPANY —
-            <a href="https://mastodon.social/" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@company</a>
+            <a href="https://mastodon.social/" class='text-gray-600 ml-1' rel='noopener noreferrer' target='_blank'>@company</a>
         </p>
         
-        <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-            LINKS TO SOCIAL MEDIA
-        </span>
+        <nav class='inline-flex justify-center sm:ml-auto sm:justify-start'>
+            <a href='#' class='mr-5 hover:text-gray-900'>Link</a>
+            <a href='#' class='mr-5 hover:text-gray-900'>Link</a>
+            <a href='#' class='mr-5 hover:text-gray-900'>Link</a>
+            <a href='#' class='mr-5 hover:text-gray-900'>Link</a>
+        </nav>
     </div>
 
     <% if signed_in? %>
