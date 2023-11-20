@@ -9,11 +9,15 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'neutral': '#ffffff',
-      'custom1':'#fafafa',
-      'high1':'#fecaca',
-      'high2':'#fef08a',
-      'high3':'#bbf7d0',
+      transparent: 'transparent',
+      current: 'currentColor',
+      'white': '#ffffff',
+      'neutral': '#fafafa',
+      'light': '#f3f4f6',
+      'gray-50': '#f8fafc',
+      'gray-100': '#f3f4f6',
+      'gray-200': '#e5e7eb',
+      'gray-400': '#9ca3af',
     },
     extend: {
       fontFamily: {
