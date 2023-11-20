@@ -14,10 +14,13 @@ module.exports = {
       'white': '#ffffff',
       'neutral': '#fafafa',
       'light': '#f3f4f6',
+      'dark': '#4b5563',
       'gray-50': '#f8fafc',
       'gray-100': '#f3f4f6',
       'gray-200': '#e5e7eb',
       'gray-400': '#9ca3af',
+      'button': '#9ca3af',
+      'button-hover': '#e5e7eb',
     },
     extend: {
       fontFamily: {
