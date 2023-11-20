@@ -20,9 +20,9 @@ gem 'high_voltage', '~> 3.1'
 # for deployment on Google App Engine
 # gem 'appengine'
 
+gem 'omniauth-discord'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem 'omniauth-google-oauth2', '~> 1.1'
-gem 'omniauth-discord'
 gem 'omniauth-rails_csrf_protection'
 
 group :development, :test do
@@ -43,3 +43,5 @@ group :development do
   # Code style checking for RSpec files
   gem 'rubocop-rspec', require: false
 end
+
+gem 'tailwindcss-rails', '~> 2.0'

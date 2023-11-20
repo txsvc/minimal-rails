@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-# Stuff shown after login
-class DashboardController < ApplicationController
+# The user's settings etc
+class ProfileController < ApplicationController
   before_action :authenticate_account!
 
   def index; end

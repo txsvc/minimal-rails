@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module Error
+  # Handle application errors in a central place
   class AppError < StandardError
     attr_reader :status, :error, :message
 

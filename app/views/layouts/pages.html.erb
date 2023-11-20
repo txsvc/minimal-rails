@@ -14,10 +14,12 @@
     <%= render 'shared/nav' %>
   
     <main class=''>
-      <%= yield %>
+      <div class='container mx-auto max-w-7xl px-2 py-2'>
+        <%= yield %>
+      </div>
     </main>
   
-    <div class='bg-neutral border-t-2 border-t-light'>
+    <div class='bg-custom1 '>
       <%= render 'shared/footer' %>
     </div>
 

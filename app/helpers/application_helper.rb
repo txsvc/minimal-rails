@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Some basic helper functions
 module ApplicationHelper
   APP_NAME = 'mini-app'
 
@@ -11,6 +12,7 @@ module ApplicationHelper
 
   def signed_in?
     return true unless session[:user_id].nil?
+
     false
   end
 

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   # login & protected page
   get 'login' => 'sessions#index'
+  get 'profile' => 'profile#index'
   get 'dashboard' => 'dashboard#index'
 
   # static pages have to be explicitly be mentioned due to the catch-all rule below

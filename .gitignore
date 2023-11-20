@@ -20,6 +20,7 @@
 
 /public/assets
 hack/**
+hacks/**
 stuff.md
 
 # Ignore master key for decrypting credentials and more.
@@ -27,3 +28,6 @@ stuff.md
 secrets.yaml
 *_secrets.yaml
 app.yaml
+
+/app/assets/builds/*
+!/app/assets/builds/.keep

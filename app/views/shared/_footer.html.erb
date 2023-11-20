@@ -1,14 +1,31 @@
-<div>
-  <div>
-    <%= link_to image_tag('logo.png'), root_path, class: '' %>
-    <%= link_to 'About', page_path('about'), class: '' %>
-    <%= link_to 'Impressum / Imprint', page_path('imprint'), class: '' %>
-    <%= link_to 'Data Privacy', page_path('privacy'), class: '' %>
-    <div>
-      <% if signed_in? %>
-        <%= link_to 'Logout', logout_path, class: '' %>
-      <% end %>
-      <%= session.id %> [<%= current_user_id %>/<%= current_user_email %> on <%= oauth_provider %>]
+<footer class='mx-auto max-w-7xl px-2 body-font'>
+    
+    <div class='flex flex-row py-2 space-x-4'>
+        <div><%= link_to 'About', page_path('about'), class: '' %></div>
+        <div><%= link_to 'Impressum / Imprint', page_path('imprint'), class: '' %></div>
+        <div><%= link_to 'Data Privacy', page_path('privacy'), class: '' %></div>
     </div>
-  </div>
-</div>
+    
+    <div class='container px-1 py-1 mx-auto flex items-center sm:flex-row flex-col'>        
+        <%= link_to root_path, class: 'flex title-font font-medium items-center md:justify-start justify-center' do %>
+            <%= image_tag('logo1x1.png') %>
+            <span class='ml-3 text-xl'>COMPANY</span>
+        <% end %>
+
+        <p class='text-sm ml-2 pl-2 md:border-l'>
+            © 2023 COMPANY —
+            <a href="https://mastodon.social/" class='text-gray-600 ml-1' rel='noopener noreferrer' target='_blank'>@company</a>
+        </p>
+        
+        <nav class='inline-flex justify-center sm:ml-auto sm:justify-start'>
+            <a href='#' class='mr-5'>Link</a>
+            <a href='#' class='mr-5'>Link</a>
+            <a href='#' class='mr-5'>Link</a>
+            <a href='#' class='mr-5'>Link</a>
+        </nav>
+    </div>
+
+    <% if signed_in? %>
+        <%= session.id %> [<%= current_user_id %>/<%= current_user_email %> on <%= oauth_provider %>]
+    <% end %>
+</footer>
