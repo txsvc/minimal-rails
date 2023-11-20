@@ -1,7 +1,4 @@
 <% content_for :page_title, formatted_title('Home') %>
 
-<div id="root">landing</div>
+<h1 class="text-3xl font-bold underline">Landing Page</h1>
 
-<% if not signed_in? %>
-    <%= link_to 'Signin', login_path, class: '' %>
-<% end %>

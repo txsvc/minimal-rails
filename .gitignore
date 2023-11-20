@@ -20,6 +20,7 @@
 
 /public/assets
 hack/**
+hacks/**
 stuff.md
 
 # Ignore master key for decrypting credentials and more.

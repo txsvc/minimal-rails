@@ -8,6 +8,13 @@ module.exports = {
     './app/views/**/*.{erb,haml,html,slim}'
   ],
   theme: {
+    colors: {
+      'color1':'#f1f5f9',
+      'color2':'#fee2e2',
+      'color3':'#ffedd5',
+      'color4':'#dcfce7',
+      'color5':'#e0f2fe',
+    },
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
