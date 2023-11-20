@@ -25,6 +25,9 @@ gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem 'omniauth-google-oauth2', '~> 1.1'
 gem 'omniauth-rails_csrf_protection'
 
+gem 'tailwindcss-rails', '~> 2.0'
+gem 'font-awesome-rails'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
@@ -44,4 +47,3 @@ group :development do
   gem 'rubocop-rspec', require: false
 end
 
-gem 'tailwindcss-rails', '~> 2.0'
