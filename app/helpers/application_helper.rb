@@ -2,7 +2,7 @@
 
 # Some basic helper functions
 module ApplicationHelper
-  APP_NAME = 'mini-app'
+  APP_NAME = 'minimal-rails'
 
   def formatted_title(title = nil)
     return APP_NAME if title.nil?
