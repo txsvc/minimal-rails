@@ -26,7 +26,7 @@ gem 'omniauth-google-oauth2', '~> 1.1'
 gem 'omniauth-rails_csrf_protection'
 
 gem 'tailwindcss-rails', '~> 2.0'
-gem 'font-awesome-rails'
+gem "font-awesome-sass", "~> 6.4.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
