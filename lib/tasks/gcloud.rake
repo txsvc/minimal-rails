@@ -6,7 +6,7 @@ namespace :gcloud do
 
   task deploy: :environment do
     puts 'Clean assets'
-    `RAILS_ENV=production bundle exec rake assets:clean && bundle exec rake assets:clobber`
+    `RAILS_ENV=production bundle exec rails tmp:clear && bundle exec rake assets:clean && bundle exec rake assets:clobber`
 
     puts 'Build assets'
     `RAILS_ENV=production bundle exec rake assets:precompile`

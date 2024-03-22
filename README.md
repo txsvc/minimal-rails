@@ -1,40 +1,67 @@
 # README
 
-'mini-app' is a minimal rails app that is so `mini`, it does not even use a database !
+A minimalistic RAILS starter app, ready for deployment on Google App Engine.
 
-It includes application gems like:
+* No database support, use REST APIs instead
+* No login or user management, supports OAuth on Google, GitHub and Discord
 
-* [High Voltage](https://github.com/thoughtbot/high_voltage) for static pages
-* [appengine-ruby](https://github.com/GoogleCloudPlatform/appengine-ruby) optional integration library for the Ruby runtime for Google App Engine
+## Setup
 
-And development gems like:
+### OAuth Providers
 
-* [RuboCop](https://github.com/rubocop/rubocop) for static code analysis and formatting
+#### on Google Cloud
 
-Possible future add-ons:
+* Create an `OAuth Consent Screen`
+* Create an `OAuth 2.0 Client ID`
 
-* [prometheus_exporter](https://github.com/thoughtbot/prometheus_exporter) for collecting and aggregating prometheus metrics
+#### on GitHub
 
+* Create a new `OAuth App`
 
-## Build and deploy
+#### on Discord
 
-See [config/deployment](config/deployment) for details.
+TBD
 
-
-## References
-
-* [Ruby runtimes on Google App Engine](https://cloud.google.com/appengine/docs/standard/ruby/runtime)
-* [sclorg/rails-ex](https://github.com/sclorg/rails-ex) deployment on Red Hat OpenShift
+**Note:** The Client IDs and Client Secrets are needed for the next step!
 
 
-## Other
+### Google App Engine
 
-### Setup
+Make a copy of `app.yaml.example` and rename it to `app.yaml`. Review and edit the file.
 
-#### Initial creation
+To deploy the app:
 
 ```shell
-rails new . --minimal --skip-active-record
+make deploy
+```
+
+
+## Resources
+
+### Local development
+
+#### Rebuild the web assets
+
+```shell
+make build_web
+```
+
+#### Environment
+
+
+```shell
+export PROJECT_ID=
+export GITHUB_KEY=
+export GITHUB_SECRET=
+export GOOGLE_APPLICATION_CREDENTIALS=
+export GOOGLE_CLIENT_ID=
+export GOOGLE_CLIENT_SECRET=
+```
+
+#### Run locally
+
+```shell
+bundle exec rails s
 ```
 
 #### Checks before committing
@@ -56,3 +83,14 @@ Edit `credentials.yml.enc`
 ```shell
 EDITOR="nano" rails credentials:edit
 ```
+
+#### Initial creation
+
+```shell
+rails new . --minimal --skip-active-record
+```
+
+## References
+
+* [Ruby runtimes on Google App Engine](https://cloud.google.com/appengine/docs/standard/ruby/runtime)
+* [sclorg/rails-ex](https://github.com/sclorg/rails-ex) deployment on Red Hat OpenShift

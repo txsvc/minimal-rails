@@ -20,3 +20,5 @@ env_variables:
   GOOGLE_CLIENT_SECRET: 'xxx'
   DISCORD_CLIENT_ID: 'discord'
   DISCORD_CLIENT_SECRET: 'xxx'
+  # other env_variables
+  

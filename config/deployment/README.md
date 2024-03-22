@@ -55,16 +55,3 @@ oc apply -f deployment_config_map.yaml
 oc apply -f deployment_config.yaml
 
 ```
-
-## Google App Engine
-
-Make a copy of `app.yaml.example` and put it into the repo's root directory. Add/change values to match the app's needs.
-
-*WARNING*: be careful to not add `app.yaml` into Git, it MIGHT contain app/api secrets !
-
-Deploy the app to Google App Engine:
-
-```shell
-bundle exec rake gcloud:deploy
-```
-
