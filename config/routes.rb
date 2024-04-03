@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   # static pages have to be explicitly be mentioned due to the catch-all rule below
   get 'pages/about' => 'high_voltage/pages#show', id: 'about'
+  get 'pages/help' => 'high_voltage/pages#show', id: 'help'
   get 'pages/imprint' => 'high_voltage/pages#show', id: 'imprint'
   get 'pages/privacy' => 'high_voltage/pages#show', id: 'privacy'
 
