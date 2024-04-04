@@ -67,7 +67,7 @@ bundle exec rails s
 #### Checks before committing
 
 ```shell
-bundler exec rubocop -a
+bundle exec rubocop -a
 ```
 
 #### Credentials etc ...
@@ -75,7 +75,7 @@ bundler exec rubocop -a
 Create `credentials.yml.enc`
 
 ```shell
-bundler rails credentials:edit
+bundle rails credentials:edit
 ```
 
 Edit `credentials.yml.enc`

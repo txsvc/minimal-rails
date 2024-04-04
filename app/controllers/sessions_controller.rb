@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
     redirect_to dashboard_path
   end
 
-  def create_google
+  def create_google2
     auth_hash = request.env['omniauth.auth']
     email = auth_hash.info['email']
     uid = auth_hash.uid
@@ -28,6 +28,11 @@ class SessionsController < ApplicationController
     create_session uid, email, auth['client_secret'], 'google'
 
     redirect_to dashboard_path
+  end
+
+  def create_google
+    auth_hash = request.env['omniauth.auth']
+    authenticate_client auth_hash, 'google'
   end
 
   def create_discord
@@ -44,6 +49,8 @@ class SessionsController < ApplicationController
   end
 
   def logout
+    AuthenticationService.revoke_client session[:user_email] # FIXME: check response?
+    # delete the session anyways ...
     session[:user_id] = nil
     session[:user_email] = nil
     session[:provider] = nil
@@ -54,7 +61,19 @@ class SessionsController < ApplicationController
 
   private
 
-  def authentciate_client(email)
+  def authenticate_client(auth_hash, provider)
+    email = auth_hash.info['email']
+    uid = auth_hash.uid
+
+    auth = register_client email
+    redirect_to root_path if auth.nil?
+
+    create_session uid, email, auth['client_secret'], provider
+
+    redirect_to dashboard_path
+  end
+
+  def register_client(email)
     auth = Authentication.new
     auth.client_id = "#{ENV.fetch('PROJECT_ID', 'default')}.#{email}"
 
